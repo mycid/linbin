@@ -1,4 +1,4 @@
-## ----, echo = FALSE------------------------------------------------------
+## ---- echo = FALSE-------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE, 
   comment = '>',
@@ -6,10 +6,10 @@ knitr::opts_chunk$set(
   fig.show = 'hold'
 )
 
-## ----, echo = FALSE------------------------------------------------------
+## ---- echo = FALSE-------------------------------------------------------
 library(linbin)
 
-## ----, fig.width = 5, fig.height = 5-------------------------------------
+## ---- fig.width = 5, fig.height = 5--------------------------------------
 # Load event data
 e <- elwha
 e.filled <- fill_event_gaps(e, max.length = 1) # fill small gaps for the variable length bins (d)
@@ -32,7 +32,7 @@ plot_events(e.bins, group.col = "g", data.cols = "mean.width", col = "grey", bor
             xlabs = "Distance upstream (km)", ylabs = "Wetted width (m)",
             dim = c(4, 1), ylim = c(0, 56), xpd = NA)
 
-## ----, fig.width = 6, fig.height = 6-------------------------------------
+## ---- fig.width = 6, fig.height = 6--------------------------------------
 # Load event data
 e <- quinault
 
@@ -49,13 +49,13 @@ plot_events(e.bins, group.col = "group", data.cols = "ONXX.total",
             xlabs = "Distance upstream (km)", ylabs = "Trout abundance",
             dim = c(3, 3), byrow = TRUE, oma = c(3, 3, 2, 2))
 
-## ----, fig.width = 6, fig.height = 6-------------------------------------
+## ---- fig.width = 6, fig.height = 6--------------------------------------
 plot_events(e.bins, group.col = "group", data.cols = "ONXX.[0-9]+", 
             main = paste0("Bin length = ", prettyNum(bin.lengths, ","), " m"), 
             xlabs = "Distance upstream (km)", ylabs = "Trout abundance",
             dim = c(3, 3), byrow = TRUE, oma = c(3, 3, 2, 2), col = heat.colors(3), border = NA)
 
-## ----, fig.width = 5, fig.height = 5-------------------------------------
+## ---- fig.width = 5, fig.height = 5--------------------------------------
 # Load NetMap data
 d <- netmap
 
@@ -86,7 +86,7 @@ plot_events(e.bins, group.col = 'group', data.cols = fields, sigfigs = c(3, 2),
             ylabs = c('Depth (m)', 'Proportion', 'IP', 'IP', 'IP'),
             oma = c(4, 3, 2, 2), mar = c(2, 4, 1.5, 0.5))
 
-## ----, fig.width = 6, fig.height = 4-------------------------------------
+## ---- fig.width = 6, fig.height = 4--------------------------------------
 # Load event data
 d = fishmotion
 e.motion = d[[1]]
