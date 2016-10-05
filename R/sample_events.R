@@ -94,6 +94,7 @@ sample_events <- function(e, bins, ..., scaled.cols = NULL, col.names = NULL, dr
     e.assigned <- cbind(e.cut[keep, ], bin = bid[keep])
     # Apply the functions
     d <- do.call(cbind, lapply(functions, function(f) f(e.assigned)))
+    d <- d[order(as.numeric(row.names(d))),]
     # Reinsert empty bins as NA
     kept <- sort(unique(bid[keep]))
     if (drop.empty) {
